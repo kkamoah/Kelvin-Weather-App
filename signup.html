@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  *{
+    text-decoration: none;
+  }
+    .signup-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+label {
+  text-align: left;
+  display: block;
+  margin: 10px;
+  margin-left: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  margin-left: 40%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#space{
+  width: 90%;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Signup</h2>
+    <form id="signup-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="email">Email</label>
+      <input type="email" id="space" name="email" required>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" id="space" name="password" required>
+      <br>
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="space" name="confirm-password" required>
+      <br>
+      <a href="account.html">
+      <button type="submit">Signup</button>
+    </a>
+    </form>
+  </div>
+</body>
+<script>
+    const signupForm = document.getElementById('signup-form');
+
+signupForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  // Basic validation
+  if (!username || !email || !password || !confirmPassword) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
+
+  // Additional validation (e.g., email format, password strength) can be added here
+
+  // Submit form data (e.g., send to server)
+  console.log('Form submitted:', username, email, password);
+});
+</script>
+</html>

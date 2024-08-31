@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+label {
+  text-align: left;
+  display: block;
+  margin: 5px;
+  margin-left: 2.5rem;
+}
+
+input {
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#user{
+  width: 80%;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="user" name="username" required>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      <br>
+      <button type="submit" id="searchButton">Login</button>
+    </form>
+  </div>
+</body>
+<script>
+    const loginForm = document.getElementById('login-form');
+
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  // Basic validation
+  if (!username || !password) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Additional validation (e.g., password strength) can be added here
+
+  // Submit form data (e.g., send to server for authentication)
+  console.log('Login form submitted:', username, password);
+});
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>GenX Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter a City">
+        <button id="searchButton">Search</button>
+        <div class="weather-info">
+            <img id="weather-icon" alt="Weather Icon" style="margin: 0; padding: 0;">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+    <h6 id="info">Create an account now to get daily weather updates</h6>
+    <div class="account">
+        <a href="/signup.html">
+            <button id="signup">Sign Up</button>
+        </a>
+        <a href="/login.html">
+            <button id="login">Log In</button>
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
